@@ -750,25 +750,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\s.boghiu\\.nuget\\packages\\": {},
+    "C:\\Users\\Serban\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\s.boghiu\\Source\\Repos\\SBEGenerator\\Generator\\Generator.csproj",
+      "projectUniqueName": "C:\\Users\\Serban\\Source\\Repos\\SBEGenerator\\Generator\\Generator.csproj",
       "projectName": "Generator",
-      "projectPath": "C:\\Users\\s.boghiu\\Source\\Repos\\SBEGenerator\\Generator\\Generator.csproj",
-      "packagesPath": "C:\\Users\\s.boghiu\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\s.boghiu\\Source\\Repos\\SBEGenerator\\Generator\\obj\\",
+      "projectPath": "C:\\Users\\Serban\\Source\\Repos\\SBEGenerator\\Generator\\Generator.csproj",
+      "packagesPath": "C:\\Users\\Serban\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Serban\\Source\\Repos\\SBEGenerator\\Generator\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\s.boghiu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Serban\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
       ],

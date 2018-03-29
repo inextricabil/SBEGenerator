@@ -1,18 +1,13 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Globalization;
-using System.IO;
-using System.Runtime.CompilerServices;
-using System.Text;
 using Generator.Models;
 
 namespace Generator
 {
     public class PublicationsConfiguration
     {
-        private string _fileName;
         private string _outputFileName;
         private string _dateStringFormat;
 
@@ -28,10 +23,8 @@ namespace Generator
 
         public PublicationsConfiguration()
         {
-            _fileName = "publications.properties";
             _outputFileName = "publications.txt";
-            _dateStringFormat = "dd.MM.yyyy";
-
+            _dateStringFormat = "yyyy-MM-dd";
 
             _messageNumber = new ValueModel<int>();
 
@@ -160,7 +153,7 @@ namespace Generator
             foreach (var date in configurationManagerDates)
             {
                 _stringDates.Add(date);
-                _dates.Add(DateTime.ParseExact(date, "yyyy-MM-dd", CultureInfo.InvariantCulture));
+                _dates.Add(DateTime.ParseExact(date, _dateStringFormat, CultureInfo.InvariantCulture));
             }
         }
     }

@@ -6,7 +6,10 @@ namespace Generator
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var generatorPub = new GeneratorPublisher("publications.txt");
+            var generatorSub = new GeneratorSubscriber(Guid.NewGuid(), "subscriptions.txt");
+            generatorPub.Generate();
+            generatorSub.Generate();
         }
     }
 }

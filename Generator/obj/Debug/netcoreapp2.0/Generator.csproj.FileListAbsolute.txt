@@ -10,3 +10,15 @@ C:\Users\s.boghiu\Source\Repos\SBEGenerator\Generator\obj\Debug\netcoreapp2.0\Ge
 C:\Users\s.boghiu\Source\Repos\SBEGenerator\Generator\obj\Debug\netcoreapp2.0\Generator.dll
 C:\Users\s.boghiu\Source\Repos\SBEGenerator\Generator\obj\Debug\netcoreapp2.0\Generator.pdb
 C:\Users\s.boghiu\Source\Repos\SBEGenerator\Generator\bin\Debug\netcoreapp2.0\Generator.dll.config
+C:\Users\Serban\Source\Repos\SBEGenerator\Generator\bin\Debug\netcoreapp2.0\Generator.dll.config
+C:\Users\Serban\Source\Repos\SBEGenerator\Generator\bin\Debug\netcoreapp2.0\Generator.deps.json
+C:\Users\Serban\Source\Repos\SBEGenerator\Generator\bin\Debug\netcoreapp2.0\Generator.runtimeconfig.json
+C:\Users\Serban\Source\Repos\SBEGenerator\Generator\bin\Debug\netcoreapp2.0\Generator.runtimeconfig.dev.json
+C:\Users\Serban\Source\Repos\SBEGenerator\Generator\bin\Debug\netcoreapp2.0\Generator.dll
+C:\Users\Serban\Source\Repos\SBEGenerator\Generator\bin\Debug\netcoreapp2.0\Generator.pdb
+C:\Users\Serban\Source\Repos\SBEGenerator\Generator\obj\Debug\netcoreapp2.0\Generator.csproj.CoreCompileInputs.cache
+C:\Users\Serban\Source\Repos\SBEGenerator\Generator\obj\Debug\netcoreapp2.0\Generator.AssemblyInfoInputs.cache
+C:\Users\Serban\Source\Repos\SBEGenerator\Generator\obj\Debug\netcoreapp2.0\Generator.AssemblyInfo.cs
+C:\Users\Serban\Source\Repos\SBEGenerator\Generator\obj\Debug\netcoreapp2.0\Generator.dll
+C:\Users\Serban\Source\Repos\SBEGenerator\Generator\obj\Debug\netcoreapp2.0\Generator.pdb
+C:\Users\Serban\Source\Repos\SBEGenerator\Generator\obj\Debug\netcoreapp2.0\Generator.csprojResolveAssemblyReference.cache

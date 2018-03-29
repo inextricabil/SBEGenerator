@@ -1,202 +1,201 @@
-﻿using System;
+﻿using Generator.Models;
+using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Text;
 
 namespace Generator.Configuration
 {
     public class SubscriptionsConfiguration
     {
-        private String fileName = "subscriptions.properties";
+        private string _outputFileName;
 
-        private String outputFileName = "subscriptions.txt";
+        private ValueModel<int> _messageNumber;
+        private ValueModel<int> _value;
+        private ValueModel<int> _drop;
+        private ValueModel<double> _variation;
+        private ValueModel<int> _companies;
+        private ValueModel<int> _dates;
+        private List<string> _operators;
+        private ValueModel<string> _minField;
+        private ValueModel<string> _minOperator;
+        private ValueModel<int> _minOperatorWeight;
 
-        private String dateStringFormat = "dd.MM.yyyy";
-
-        private ValueModel<Integer> nrMessages;
-        private ValueModel<Integer> value;
-        private ValueModel<Integer> drop;
-        private ValueModel<Integer> variation;
-        private ValueModel<Integer> companies;
-        private ValueModel<Integer> dates;
-        private ArrayList<String> operators;
-        private ValueModel<String> minField;
-        private ValueModel<String> minOperator;
-        private ValueModel<Integer> minOperatorWeight;
-
-        public SubscriptionsConfig()
+        public SubscriptionsConfiguration()
         {
-            this.nrMessages = new ValueModel<Integer>();
-            this.value = new ValueModel<Integer>();
-            this.drop = new ValueModel<Integer>();
-            this.variation = new ValueModel<Integer>();
-            this.companies = new ValueModel<Integer>();
-            this.dates = new ValueModel<Integer>();
-            this.setOperators(new ArrayList<String>());
-            this.minField = new ValueModel<String>();
-            this.minOperator = new ValueModel<String>();
-            this.minOperatorWeight = new ValueModel<Integer>();
+            _outputFileName = "subscriptions.txt";
+            _messageNumber = new ValueModel<int>();
+            _value = new ValueModel<int>();
+            _drop = new ValueModel<int>();
+            _variation = new ValueModel<double>();
+            _companies = new ValueModel<int>();
+            _dates = new ValueModel<int>();
+            SetOperators(new List<string>());
+            _minField = new ValueModel<string>();
+            _minOperator = new ValueModel<string>();
+            _minOperatorWeight = new ValueModel<int>();
         }
 
-        public String getOutputFileName()
+        public String GetOutputFileName()
         {
-            return this.outputFileName;
+            return _outputFileName;
         }
 
-        public ValueModel<Integer> getValue()
+        public ValueModel<int> GetValue()
         {
-            return value;
+            return _value;
         }
 
-        public void setValue(ValueModel<Integer> value)
+        public void SetValue(ValueModel<int> value)
         {
-            this.value = value;
+            _value = value;
         }
 
-        public ValueModel<Integer> getNrMessages()
+        public ValueModel<int> GetMessageNumber()
         {
-            return nrMessages;
+            return _messageNumber;
         }
 
-        public void setNrMessages(ValueModel<Integer> nrMessages)
+        public void SetMessageNumber(ValueModel<int> messageNumber)
         {
-            this.nrMessages = nrMessages;
+            _messageNumber = messageNumber;
         }
 
-        public ValueModel<Integer> getDrop()
+        public ValueModel<int> GetDrop()
         {
-            return drop;
+            return _drop;
         }
 
-        public void setDrop(ValueModel<Integer> drop)
+        public void SetDrop(ValueModel<int> drop)
         {
-            this.drop = drop;
+            _drop = drop;
         }
 
-        public ValueModel<Integer> getVariation()
+        public ValueModel<double> GetVariation()
         {
-            return variation;
+            return _variation;
         }
 
-        public void setVariation(ValueModel<Integer> variation)
+        public void SetVariation(ValueModel<double> variation)
         {
-            this.variation = variation;
+            _variation = variation;
         }
 
-        public ValueModel<Integer> getCompanies()
+        public ValueModel<int> GetCompanies()
         {
-            return companies;
+            return _companies;
         }
 
-        public void setCompanies(ValueModel<Integer> companies)
+        public void SetCompanies(ValueModel<int> companies)
         {
-            this.companies = companies;
+            _companies = companies;
         }
 
-        public ValueModel<Integer> getDates()
+        public ValueModel<int> GetDates()
         {
-            return dates;
+            return _dates;
         }
 
-        public void setDates(ValueModel<Integer> dates)
+        public void SetDates(ValueModel<int> dates)
         {
-            this.dates = dates;
+            _dates = dates;
         }
 
-        public ArrayList<String> getOperators()
+        public List<String> GetOperators()
         {
-            return operators;
+            return _operators;
         }
 
-        public void setOperators(ArrayList<String> operators)
+        public void SetOperators(List<string> operators)
         {
-            this.operators = operators;
+            _operators = operators;
         }
 
-        public ValueModel<String> getMinField()
+        public ValueModel<String> GetMinField()
         {
-            return minField;
+            return _minField;
         }
 
-        public void setMinField(ValueModel<String> minField)
+        public void SetMinField(ValueModel<string> minField)
         {
-            this.minField = minField;
+            _minField = minField;
         }
 
-        public ValueModel<String> getMinOperator()
+        public ValueModel<String> GetMinOperator()
         {
-            return minOperator;
+            return _minOperator;
         }
 
-        public void setMinOperator(ValueModel<String> minOperator)
+        public void SetMinOperator(ValueModel<string> minOperator)
         {
-            this.minOperator = minOperator;
+            _minOperator = minOperator;
         }
 
-        public ValueModel<Integer> getMinOperatorWeight()
+        public ValueModel<int> GetMinOperatorWeight()
         {
-            return minOperatorWeight;
+            return _minOperatorWeight;
         }
 
-        public void setMinOperatorWeight(ValueModel<Integer> minOperatorWeight)
+        public void SetMinOperatorWeight(ValueModel<int> minOperatorWeight)
         {
-            this.minOperatorWeight = minOperatorWeight;
+            _minOperatorWeight = minOperatorWeight;
         }
 
-        public double getFieldWeight(Field field)
+        public double GetFieldWeight(Field field)
         {
             if (field == Field.company)
             {
-                return this.companies.getValue();
+                return _companies.GetValue();
             }
 
             if (field == Field.drop)
             {
-                return this.drop.getValue();
+                return _drop.GetValue();
             }
 
             if (field == Field.value)
             {
-                return this.value.getValue();
+                return _value.GetValue();
             }
 
             if (field == Field.variation)
             {
-                return this.variation.getValue();
+                return _variation.GetValue();
             }
 
             if (field == Field.date)
             {
-                return this.dates.getValue();
+                return _dates.GetValue();
             }
 
             return 0;
         }
 
-        public Field minField()
+        public Field MinField()
         {
-            String field = this.minField.getValue();
+            string field = _minField.GetValue();
 
-            if (field.equals("company"))
+            if (field.Equals("company"))
             {
                 return Field.company;
             }
 
-            if (field.equals("drop"))
+            if (field.Equals("drop"))
             {
                 return Field.drop;
             }
 
-            if (field.equals("value"))
+            if (field.Equals("value"))
             {
                 return Field.value;
             }
 
-            if (field.equals("variation"))
+            if (field.Equals("variation"))
             {
                 return Field.variation;
             }
 
-            if (field.equals("date"))
+            if (field.Equals("date"))
             {
                 return Field.date;
             }
@@ -204,63 +203,56 @@ namespace Generator.Configuration
             return Field.company;
         }
 
-        public void loadConfig() throws IOException, ParseException {
-
-        Properties prop = new Properties();
-
-        InputStream inputStream = new FileInputStream(new File(this.fileName));
-
-        prop.load(inputStream);
-
-		this.prepareConfig(prop);
-    }
-
-    private void prepareConfig(Properties prop) throws ParseException
-    {	
-		this.loadNrMessages(prop, "nr-messages", this.nrMessages);
-		this.loadIntegerValue(prop, "value", this.value);
-		this.loadIntegerValue(prop, "drop", this.drop);
-		this.loadIntegerValue(prop, "variation", this.variation);
-		this.loadIntegerValue(prop, "companies", this.companies);
-		this.loadIntegerValue(prop, "dates", this.dates);
-		this.loadStringValue(prop, "min-field", this.minField);
-		this.loadStringValue(prop, "min-op", this.minOperator);
-		this.loadIntegerValue(prop, "min-freq-op", this.minOperatorWeight);
-		this.loadOperators(prop);
-
-    }
-
-    private void loadNrMessages(Properties prop, String key, ValueModel<Integer> nrMessages)
-    {
-        String nrMessagesKey = prop.getProperty(key);
-
-        nrMessages.setValue(Integer.parseInt(nrMessagesKey));
-    }
-
-    private void loadIntegerValue(Properties prop, String key, ValueModel<Integer> model)
-    {
-        String val = prop.getProperty(key);
-
-        model.setValue(Integer.parseInt(val));
-    }
-
-    private void loadStringValue(Properties prop, String key, ValueModel<String> model)
-    {
-        String val = prop.getProperty(key);
-
-        model.setValue(val);
-    }
-
-    private void loadOperators(Properties prop)
-    {
-        String operatorsValue = prop.getProperty("operators");
-
-        String[] operators = operatorsValue.split(",");
-
-        for (String operator : operators)
+        public void LoadConfiguration()
         {
-            this.operators.add(operator);
+            LoadMessageNumber(_messageNumber);
+ 
+             LoadIntegerValue( "value", _value);
+             LoadIntegerValue( "drop", _drop);
+             LoadDoubleValue( "variation", _variation);
+             LoadIntegerValue( "companies", _companies);
+             LoadIntegerValue( "dates", _dates);
+             LoadStringValue("min-field", _minField);
+             LoadStringValue("min-op", _minOperator);
+             LoadIntegerValue( "min-freq-op", _minOperatorWeight);
+             LoadOperators();
+        }
+
+        private void LoadDoubleValue(string key, ValueModel<double> model)
+        {
+            var value = ConfigurationManager.AppSettings[key];
+            model.SetValue(double.Parse(value));
+        }
+
+        private static void LoadMessageNumber(ValueModel<int> messageNumber)
+        {
+            var configurationManagerMessageNumber = ConfigurationManager.AppSettings["_messageNumber"];
+            messageNumber.SetValue(int.Parse(configurationManagerMessageNumber));
+        }
+
+        private static void LoadIntegerValue(string key, ValueModel<int> model)
+        {
+            var value = ConfigurationManager.AppSettings[key];
+            model.SetValue(int.Parse(value));
+        }
+
+        private void LoadStringValue(string key, ValueModel<string> model)
+        {
+            var value = ConfigurationManager.AppSettings[key];
+            model.SetValue(value);
+        }
+
+        private void LoadOperators()
+        {
+            var value = ConfigurationManager.AppSettings["operators"];
+
+            var operators = value.Split(",");
+
+            foreach (var op in operators)
+            {
+                _operators.Add(op);
+            }
         }
     }
 }
-}
+
