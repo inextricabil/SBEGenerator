@@ -2,6 +2,7 @@
 using Generator.Models;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 
@@ -321,11 +322,18 @@ namespace Generator
         {
             Predicate<Subscription> filter = SubsFilterByFieldAndEqualsOperator(minField, minOperator);
 
-            int nr = _subscriptions.FindAll(filter).ToList().Count;
+            var nr = _subscriptions.FindAll(filter).ToList().Count;
 
-            double weight = nr * 100 / nrTouples;
 
-            string strWeight = string.Format("%.2f", weight);
+            double weight = nr * 100;
+            if (nrTouples != 0)
+            {
+                weight = weight / nrTouples;
+            }
+
+            var truncatedWeight = Math.Truncate(weight * 100) / 100;
+
+            var strWeight = truncatedWeight.ToString(CultureInfo.InvariantCulture);
 
             return double.Parse(strWeight);
         }
@@ -342,7 +350,7 @@ namespace Generator
 
             int value = random.Next(rangeMax);
 
-            Subscription randomSub = availableSubs.Where(v => v.GetValuesValue() == value).FirstOrDefault();
+            Subscription randomSub = availableSubs.FirstOrDefault(v => v.GetValuesValue() == value);
 
             if (minField == Field.company && randomSub.GetCompanyValue() != string.Empty
                             && randomSub.GetCompany().GetOperator() != minOperator)

@@ -1,0 +1,15 @@
+d2209491-a5d2-4ee4-a310-d734e3727f96_6c4bdc70-8db8-4c7a-8f10-21e3eaccca60#company,=,Microsoft;drop,<=,922.63;value,=,19554.29;variation,<=,3471.09
+9cf864d4-3df2-486d-b9c1-0b2487144d34_6c4bdc70-8db8-4c7a-8f10-21e3eaccca60#company,<=,Google;drop,<=,164.63;variation,>=,5863.02;date,>=,24.06.2004
+9df589d2-04cc-4d4d-871b-28e42c92620e_6c4bdc70-8db8-4c7a-8f10-21e3eaccca60#company,=,Facebook;drop,>=,881.46;value,>=,12976.63;variation,<,3683.01;date,=,13.07.2014
+eb8e5c42-05ca-4d1a-8911-ae6b1a43d68d_6c4bdc70-8db8-4c7a-8f10-21e3eaccca60#company,=,Facebook;value,>=,14805.19;variation,>,2301.51
+37e319a8-a1b6-4c50-9273-0cfb5991e63e_6c4bdc70-8db8-4c7a-8f10-21e3eaccca60#company,<,Microsoft;drop,=,473.14;value,>=,15645.28;variation,>,5679.81;date,>,02.02.2002
+4a581a8e-9c56-4ff4-94ce-59a26b598e8b_6c4bdc70-8db8-4c7a-8f10-21e3eaccca60#company,=,Google;drop,<,990.91;value,<,11199.45;variation,<,3730.93;date,=,02.02.2002
+6f6cf757-940f-431b-9a8f-116c49c03e51_6c4bdc70-8db8-4c7a-8f10-21e3eaccca60#company,<,Facebook;variation,=,2174.64;date,=,13.07.2014
+bb55a353-cd91-4d00-ba27-05c9c22f6a5d_6c4bdc70-8db8-4c7a-8f10-21e3eaccca60#company,=,Google;variation,<,4056.69
+b87bc200-f4e8-45a7-bbd0-6c2c20fb5821_6c4bdc70-8db8-4c7a-8f10-21e3eaccca60#company,>,Microsoft;drop,>,717.78;variation,=,2619.1
+a6e08e99-fd41-4271-bbd8-c3f9d8d63b49_6c4bdc70-8db8-4c7a-8f10-21e3eaccca60#company,>=,Google;drop,<,65.07;value,=,29524.53;variation,<,4055.05;date,<=,13.07.2014
+126246ea-6312-429e-bba9-305a1c6ceb77_6c4bdc70-8db8-4c7a-8f10-21e3eaccca60#company,=,Microsoft;variation,<=,2314.87;date,=,13.07.2014
+36d5e527-da94-4c45-9c02-1cca5ab6694d_6c4bdc70-8db8-4c7a-8f10-21e3eaccca60#company,<,Google;variation,>,5735.75;date,<,08.08.2008
+bda164a7-4a48-4a94-8b5f-1bbb9d3adb09_6c4bdc70-8db8-4c7a-8f10-21e3eaccca60#company,=,Facebook;drop,<=,905.62;value,<=,19200.16;variation,<=,5348.2
+eefd6f94-183b-4f16-94d0-9e2b64ec5963_6c4bdc70-8db8-4c7a-8f10-21e3eaccca60#company,<,Apple;drop,<=,62.64;value,>=,12469.01;variation,=,2352.3
+949eded0-8f0b-47be-97fa-c77fe1f65948_6c4bdc70-8db8-4c7a-8f10-21e3eaccca60#company,=,ASUS;value,=,27983.83;variation,<=,5041.79;date,>=,13.07.2014
