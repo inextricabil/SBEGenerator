@@ -8,7 +8,7 @@ namespace Generator.Configuration
 {
     public class SubscriptionsConfiguration
     {
-        private string _outputFileName;
+        private readonly string _outputFileName;
 
         private ValueModel<int> _messageNumber;
         private ValueModel<int> _value;
@@ -121,7 +121,7 @@ namespace Generator.Configuration
             _minField = minField;
         }
 
-        public ValueModel<String> GetMinOperator()
+        public ValueModel<string> GetMinOperator()
         {
             return _minOperator;
         }
@@ -143,32 +143,22 @@ namespace Generator.Configuration
 
         public double GetFieldWeight(Field field)
         {
-            if (field == Field.company)
+            switch (field)
             {
-                return _companies.GetValue();
+                case Field.company:
+                    return _companies.GetValue();
+                case Field.drop:
+                    return _drop.GetValue();
+                case Field.value:
+                    return _value.GetValue();
+                case Field.variation:
+                    return _variation.GetValue();
+                case Field.date:
+                    return _dates.GetValue();
+                default:
+                    return 0;
             }
 
-            if (field == Field.drop)
-            {
-                return _drop.GetValue();
-            }
-
-            if (field == Field.value)
-            {
-                return _value.GetValue();
-            }
-
-            if (field == Field.variation)
-            {
-                return _variation.GetValue();
-            }
-
-            if (field == Field.date)
-            {
-                return _dates.GetValue();
-            }
-
-            return 0;
         }
 
         public Field MinField()
@@ -206,16 +196,16 @@ namespace Generator.Configuration
         public void LoadConfiguration()
         {
             LoadMessageNumber(_messageNumber);
- 
-             LoadIntegerValue( "value", _value);
-             LoadIntegerValue( "drop", _drop);
-             LoadDoubleValue( "variation", _variation);
-             LoadIntegerValue( "companies", _companies);
-             LoadIntegerValue( "dates", _dates);
-             LoadStringValue("min-field", _minField);
-             LoadStringValue("min-op", _minOperator);
-             LoadIntegerValue( "min-freq-op", _minOperatorWeight);
-             LoadOperators();
+
+            LoadIntegerValue("Subscriptions_value", _value);
+            LoadIntegerValue("Subscriptions_drop", _drop);
+            LoadIntegerValue("Subscriptions_min-freq-op", _minOperatorWeight);
+            LoadIntegerValue("Subscriptions_companies", _companies);
+            LoadIntegerValue("Subscriptions_dates", _dates);
+            LoadDoubleValue("Subscriptions_variation", _variation);
+            LoadStringValue("Subscriptions_min-field", _minField);
+            LoadStringValue("Subscriptions_min-op", _minOperator);
+            LoadOperators();
         }
 
         private void LoadDoubleValue(string key, ValueModel<double> model)
@@ -226,7 +216,7 @@ namespace Generator.Configuration
 
         private static void LoadMessageNumber(ValueModel<int> messageNumber)
         {
-            var configurationManagerMessageNumber = ConfigurationManager.AppSettings["_messageNumber"];
+            var configurationManagerMessageNumber = ConfigurationManager.AppSettings["Subscriptions_messageNumber"];
             messageNumber.SetValue(int.Parse(configurationManagerMessageNumber));
         }
 
@@ -244,7 +234,7 @@ namespace Generator.Configuration
 
         private void LoadOperators()
         {
-            var value = ConfigurationManager.AppSettings["operators"];
+            var value = ConfigurationManager.AppSettings["Subscriptions_operators"];
 
             var operators = value.Split(",");
 

@@ -8,8 +8,8 @@ namespace Generator
 {
     public class PublicationsConfiguration
     {
-        private string _outputFileName;
-        private string _dateStringFormat;
+        private readonly string _outputFileName;
+        private readonly string _dateStringFormat;
 
         private ValueModel<int> _messageNumber;
 
@@ -115,16 +115,16 @@ namespace Generator
         public void LoadConfiguration()
         {
             LoadMessageNumber(_messageNumber);
-            LoadRangedValue("_min-drop", "_max-drop", _drop);
-            LoadRangedValue("_min-value", "_max-value", _value);
-            LoadRangedValue("_min-variation", "_max-variation", _variation);
+            LoadRangedValue("Publications_min-drop", "Publications_max-drop", _drop);
+            LoadRangedValue("Publications_min-value", "Publications_max-value", _value);
+            LoadRangedValue("Publications_min-variation", "Publications_max-variation", _variation);
             LoadCompanies();
             LoadDates();
         }
 
         private static void LoadMessageNumber(ValueModel<int> messageNumber)
         {
-            var configurationManagerMessageNumber = ConfigurationManager.AppSettings["_messageNumber"];
+            var configurationManagerMessageNumber = ConfigurationManager.AppSettings["Publications_messageNumber"];
             messageNumber.SetValue(int.Parse(configurationManagerMessageNumber));
         }
 
@@ -139,7 +139,7 @@ namespace Generator
 
         private void LoadCompanies()
         {
-            var companies = ConfigurationManager.AppSettings["_companies"].Split(",");
+            var companies = ConfigurationManager.AppSettings["Publications_companies"].Split(",");
 
             foreach (var company in companies)
             {
@@ -149,7 +149,7 @@ namespace Generator
 
         private void LoadDates()
         {
-            var configurationManagerDates = ConfigurationManager.AppSettings["_dates"].Split(",");
+            var configurationManagerDates = ConfigurationManager.AppSettings["Publications_dates"].Split(",");
             foreach (var date in configurationManagerDates)
             {
                 _stringDates.Add(date);
